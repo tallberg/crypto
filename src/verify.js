@@ -127,10 +127,9 @@ export function ChiSquareBigrams(text) {
     const N = filteredText.length - 1;
     let chiSquare = 0;
 
-    // Calculate the Chi-Square statistic
-    for (const bigram in expectedFrequencies) {
-        const observed = bigramCounts[bigram] || 0;
-        const expected = (expectedFrequencies[bigram] / 100) * N;
+    for (const bigram in bigramCounts) {
+        const observed = bigramCounts[bigram];
+        const expected = ((expectedFrequencies[bigram] || 0.01) / 100) * N;
         chiSquare += Math.pow(observed - expected, 2) / expected;
     }
 

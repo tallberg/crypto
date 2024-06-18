@@ -1,6 +1,9 @@
 {
-  "dependencies": {
-    "angular": "^1.8.2",
-    "material": "^0.4.3"
+  "scripts": { 
+     "serve": "http-server", 
+     "start": "npm run serve" 
+   },
+  "devDependencies": {
+    "http-server": "^14.1.1"
   }
 }
